@@ -20,3 +20,18 @@ def temperature(temp):
     return result
 print("{:.4f}".format(temperature(100))) #화씨 -> 섮씨
 print(f'{temperature(100):.4f}')
+
+print(int('1010010', 2))
+
+def FtoC(tmp):
+    result = tmp * 9 / 5 + 32
+    return result
+
+print()
+num = int(input("1 or 2 : "))
+if num == 1:
+    N = int(input("temperature : "))
+    print(f'{temperature(N):.4f}')
+elif num == 2:
+    N = int(input("temperature : "))
+    print(f'{FtoC(N):.4f}')
