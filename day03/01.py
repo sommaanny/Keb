@@ -16,3 +16,6 @@ test3 = "What! the...!!?"
 print(test3.strip(".!?"))
 print(test3.replace('!', '').replace('.', '').replace('?', ''))
 
+d = {'a' : 'apple', 'b' : 'banana'}
+print("{1}, {1}".format(d))
+print(d['a'])
