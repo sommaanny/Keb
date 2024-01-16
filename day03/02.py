@@ -14,6 +14,12 @@ import math
 #         print("Not 소수")
 
 M, N = map(int, sys.stdin.readline().split())
+
+if M > N:
+    tmp = M
+    M = N
+    N = tmp
+
 list_prime = [1 for i in range(N + 1)]
 list_prime[0] = 0
 list_prime[1] = 0
