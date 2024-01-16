@@ -12,3 +12,4 @@ if letter in vowel:
     print(f'{letter} is vowel')
 else:
     print(f'{letter} is not vowel')
+

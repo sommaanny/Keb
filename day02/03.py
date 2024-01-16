@@ -30,8 +30,9 @@ def FtoC(tmp):
 print()
 num = int(input("1 or 2 : "))
 if num == 1:
-    N = int(input("temperature : "))
+    N = float(input("temperature : "))
     print(f'{temperature(N):.4f}')
 elif num == 2:
-    N = int(input("temperature : "))
+    N = float(input("temperature : "))
     print(f'{FtoC(N):.4f}')
+

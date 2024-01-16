@@ -6,8 +6,7 @@ print(a)
 print(b)
 b = 99
 print(a)
-print(b)
-
+print(b)  # inmutable type
 
 list_a = [1, 2, 3]
 list_b = list_a
@@ -17,4 +16,3 @@ list_b[0] = 99
 print(list_a)
 print(list_b)   #mutable한 type
 print()
-

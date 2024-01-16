@@ -10,4 +10,4 @@ print(subjects)  #list 타입은 변경가능
 print()
 print()
 
-help("keywords")
+help("keywords") #예약어 확인
