@@ -1,17 +1,17 @@
 import sys
 import math
 
-# n = int(sys.stdin.readline())
+n = int(sys.stdin.readline())
 
-# for i in range(2, int(math.sqrt(n)) + 1):
-#     if n % i == 0:
-#         print("Not 소수")
-#         break
-# else:
-#     if (n > 2):
-#         print("소수")
-#     else:
-#         print("Not 소수")
+for i in range(2, int(math.sqrt(n)) + 1):
+    if n % i == 0:
+        print("Not 소수")
+        break
+else:
+    if (n > 2):
+        print("소수")
+    else:
+        print("Not 소수")
 
 M, N = map(int, sys.stdin.readline().split())
 

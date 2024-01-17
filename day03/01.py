@@ -17,5 +17,5 @@ print(test3.strip(".!?"))
 print(test3.replace('!', '').replace('.', '').replace('?', ''))
 
 d = {'a' : 'apple', 'b' : 'banana'}
-print("{1}, {1}".format(d))
+print("{0[a]}, {0[b]}".format(d))
 print(d['a'])
