@@ -38,13 +38,13 @@ from collections import deque
 #     list_card.append(list_card.popleft())
 # print(list_card[0])
 
-N, K = map(int, sys.stdin.readline().split())
-list_people = deque([i for i in range(1, N + 1)])
-print("<",end='')
-while(len(list_people) != 0):
-    for j in range(K - 1):
-        list_people.append(list_people.popleft())
-    if len(list_people) > 1:
-        print(list_people.popleft(), end=', ')
-    else:
-        print((list_people.popleft()),end='>')
+# N, K = map(int, sys.stdin.readline().split()) #백준 28279
+# list_people = deque([i for i in range(1, N + 1)])
+# print("<",end='')
+# while(len(list_people) != 0):
+#     for j in range(K - 1):
+#         list_people.append(list_people.popleft())
+#     if len(list_people) > 1:
+#         print(list_people.popleft(), end=', ')
+#     else:
+#         print((list_people.popleft()),end='>')

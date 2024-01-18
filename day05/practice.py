@@ -24,5 +24,3 @@ plots = ['A nun turns into a mon ster', 'A haunted yarn shop']
 movies = dict(zip(titles, plots))
 print(movies)
 
-dic_test2 = {(1, 2) : 'o' , (3, 4) : 'x'}
-print(dic_test2)

@@ -27,7 +27,3 @@ a = 3
 print(a, b)
 print()
 
-dic_b = dic_a
-dic_c = dic_a.copy()
-dic_d = copy.deepcopy(dic_a)
-print(dic_a, dic_b, dic_c, dic_d)
