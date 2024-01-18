@@ -78,10 +78,12 @@ count_zero = A.count(0)
 #             index += 1
 #     print(return_x, end= ' ')
 
-for i in C:
-    if count_zero == 0:
+
+if count_zero == 0:
+    for i in C:
         print(i, end=' ')
-    elif count_zero % 2 == 0:
-        pass
-    else:
-        pass
+else: #큐를 이어붙이면 앞으로 들어가고 맨 뒤에게 빠져나와 출력됨
+    result = deque([B[i] for i in range(N) if A[i] != 1])
+    for j in C:
+        result.appendleft(j)
+        print(result.pop(), end=' ')
