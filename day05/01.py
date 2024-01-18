@@ -20,11 +20,5 @@ def print_data(data,*,start=0, end=100):
     
 data = ['a', 'b', 'c', 'd', 'e']
 print_data(data, start=1)
+print()
 
-def print_add(a, b):
-    print(a+b)
-
-def add_args(func, arg1, arg2):
-    func(arg1, arg2)
-
-add_args(print_add, 1, 2)
