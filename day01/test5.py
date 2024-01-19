@@ -12,4 +12,6 @@ for i in range(N):
             word_book[word] = 1
 
 result_book = sorted(word_book.items(), key = lambda x: (-x[1], -len(x[0]), x[0]))
-print(result_book)
+
+for keys, values in result_book:
+    print(keys)
