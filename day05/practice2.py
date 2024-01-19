@@ -24,7 +24,7 @@ for _ in range(3):
 def test(func):
     def new_function(*args, **kwargs):
         print("start")
-        func()
+        func(*args, **kwargs)
         return print("end")
     return new_function
 
