@@ -61,6 +61,7 @@ while(True and flag == 0):
         else:
             print("Please Enter the right number")
             print()
+            continue
         
         if enemy.getHP() > 0:
             print()
@@ -82,12 +83,13 @@ while(True and flag == 0):
     
     if me.getHP() <= 0:
         print("You Lose")
-    else:
+    elif enemy.getHP() <= 0:
         print("You win!")
         if count == 0:
             answer = input("Do you want evolution? (Enter the Yes or any answer): ")
             if answer == 'Yes':
                 me.evolution()
+                count += 1
             else:
                 print("Bye Bye!")
                 break
