@@ -29,8 +29,10 @@ class Pikachu(Poketmon):
     def skill(self):
         print(f"{self.__name__} {self.__skill__}!")
         if self.__name__ == "Pikachu":
+            print(f"Deals 50 damage to the enemy.")
             return 50
         else:
+            print(f"Deals 100 damage to the enemy.")
             return 100
     
     def evolution(self):
@@ -51,8 +53,10 @@ class Charmander(Poketmon):
     def skill(self):
         print(f"{self.__name__} {self.__skill__}!")
         if self.__name__ == "Charmander":
+            print(f"Deals 50 damage to the enemy.")
             return 50
         else:
+            print(f"Deals 100 damage to the enemy.")
             return 100
 
     def evolution(self):
@@ -73,8 +77,10 @@ class Squirtle(Poketmon):
     def skill(self):
         print(f"{self.__name__} {self.__skill__}!")
         if self.__name__ == "Squirtle":
+            print(f"Deals 50 damage to the enemy.")
             return 50
         else:
+            print(f"Deals 100 damage to the enemy.")
             return 100
     
     def evolution(self):

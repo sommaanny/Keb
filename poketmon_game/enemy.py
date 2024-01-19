@@ -32,6 +32,7 @@ class Magikarp(Anemy):    # 2번
     
     def skill(self):
         print("Splash!")
+        print(f"You took 80 damage.")
         return 80
 
 
@@ -45,5 +46,6 @@ class Dragonite(Anemy):    # 3번
     
     def skill(self):
         print("Fire Punch!")
+        print(f"You took 150 damage.")
         return 150
 
