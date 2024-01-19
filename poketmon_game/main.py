@@ -29,6 +29,7 @@ while(True):
         print("Please Enter the right number")
         print()
 
+count = 0
 while(True and flag == 0):
     print("Creating the enemy..")
     time.sleep(3)
@@ -83,4 +84,12 @@ while(True and flag == 0):
         print("You Lose")
     else:
         print("You win!")
-    break
+        if count == 0:
+            answer = input("Do you want evolution? (Enter the Yes or any answer): ")
+            if answer == 'Yes':
+                me.evolution()
+            else:
+                print("Bye Bye!")
+                break
+        else:
+            break
