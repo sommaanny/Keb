@@ -4,7 +4,10 @@ class Poketmon:    # 부모클래스
         self.__basicDamage__ = 30
     
     def getHP(self):
-        return self.__hp__
+        if self.__hp__ > 0:
+            return self.__hp__
+        else:
+            return 0
     
     def getBasicDamage(self):
         return self.__basicDamage__

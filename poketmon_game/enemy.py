@@ -7,7 +7,10 @@ class Anemy:
         return self.__basicDamage__
     
     def getHP(self):
-        return self.__hp__
+        if self.__hp__ > 0:
+            return self.__hp__
+        else:
+            return 0
     
     def attack(self):
         print(f"{self.__name__} Attack!")

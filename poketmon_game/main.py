@@ -47,6 +47,7 @@ while(True and flag == 0):
     while(me.getHP() > 0 and enemy.getHP() > 0):
         print("Chose number 1)basic attack 2)skill attack 3)run 4) exit")
         num = int(sys.stdin.readline())
+        print()
         if num == 1:
             enemy.damage(me.getBasicDamage())
             print(f"Deals {me.getBasicDamage()} damage to the enemy.")
@@ -60,9 +61,12 @@ while(True and flag == 0):
             print("Please Enter the right number")
             print()
         
-        print()
-        print("Enemy Turn")
-        print()
+        if enemy.getHP() > 0:
+            print()
+            print("Enemy Turn")
+            print()
+        else:
+            break
         time.sleep(2)
         
         random_attack = random.randint(1,2)
@@ -72,6 +76,7 @@ while(True and flag == 0):
             print(f"Your HP is : {me.getHP()}")
         else:
             me.damage(enemy.skill())
+        print()
         time.sleep(2)
     
     if me.getHP() <= 0:
@@ -79,6 +84,3 @@ while(True and flag == 0):
     else:
         print("You win!")
     break
-
-    
-    
