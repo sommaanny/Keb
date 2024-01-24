@@ -17,31 +17,48 @@ import sys
 #     S = sys.stdin.readline().rstrip()
 #     print(isPalindrome(S), count)
 
+
+import sys
+
 def merge_sort(arr):
     if len(arr) < 2:
         return arr
-    mid = len(arr) // 2
+    mid = (len(arr) + 1) // 2
     low_arr = merge_sort(arr[:mid])
     high_arr = merge_sort(arr[mid:])
-    merge(low_arr, high_arr)
+    return merge(low_arr, high_arr)
 
 def merge(l, h):
     result = []
     i = j = 0
-
+    global count
     while i < len(l) and j <len(h):
         if l[i] < h[j]:
             result.append(l[i])
+            track_list.append(l[i])
             i += 1
         else:
             result.append(h[j])
+            track_list.append(l[j])
             j += 1
-    result.extend(l[i:])
-    result.extend(h[j:])
+
+    while(i < len(l)):
+        result.append(l[i])
+        track_list.append(l[i])
+        i += 1
+    while(j < len(h)):
+        result.append(h[j])
+        track_list.append(h[j])
+        j += 1
 
     return result
 
 A, K = map(int, sys.stdin.readline().split())
 list_num = list(map(int, sys.stdin.readline().split()))
+track_list = []
+merge_sort(list_num)
 
-print(merge_sort(list_num))
+if K <= len(track_list):
+    print(track_list[K - 1])
+else:
+    print(-1)
