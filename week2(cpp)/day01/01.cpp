@@ -1,26 +1,58 @@
 #include <iostream>
+#include <vector>
 
 int main() {
-    int arr[9][9]{0};  //std::array<array<int, 9>, 9> arr;
-    for(int i = 0; i < 9; i++) {
-        for(int j = 0; j < 9; j++) {
-            std::cin >> arr[i][j];
+    std::vector<int> count_list;
+    int N, M, count_w, count_b, min;
+    char color;
+    std::cin >> N >> M;
+    int board[N][M];
+
+    for(int i = 0; i < N; i++) {
+        for(int j =0; j < M; j++) {
+            std::cin >> color;
+            if (color == 'B')
+                board[i][j] = 0;  //black
+            else
+                board[i][j] = 1; //white
         }
     }
-    int max = arr[0][0];
-    int max_idx[2]{0};
 
-    for(int i = 0; i < 9; i++) {
-        for(int j = 0; j < 9; j++) {
-            if(arr[i][j] > max) {
-                max = arr[i][j];
-                max_idx[0] = i;
-                max_idx[1] = j;
+    for(int i = 0; i <  N - 7; i++) {
+        for(int j = 0; j < M - 7; j++) {          //체스판 8 * 8 쪼개기
+            count_w = 0;
+            count_b = 0;
+            for(int a = i; a < i + 8; a++) {
+                for(int b = j; b < j + 8; b++) {
+                    if((a + b) % 2 == 0) {
+                        if (board[a][b] != 1) {
+                            count_w++;
+                        }
+                        else {
+                            count_b++;
+                        }
+                    }
+                    else {
+                        if(board[a][b] != 1) {
+                            count_b++;
+                        }
+                        else
+                            count_w++;
+
+                    }
+                }
             }
+        
+            count_list.push_back(count_w);
+            count_list.push_back(count_b);
         }
     }
-
-    std::cout << max << std::endl << max_idx[0] + 1 << " " << max_idx[1] + 1;
+    min = count_list[0];
+    for(int i = 0; i < count_list.size(); i++) {
+        if (min > count_list[i]) {
+            min = count_list[i];
+        }
+    }
+    std::cout << min;
     return 0;
 }
-    
