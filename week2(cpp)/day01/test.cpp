@@ -1,34 +1,35 @@
-#include <algorithm>
 #include <iostream>
-#include <vector>
-
+#include <fstream>
+#include <iomanip>
 using namespace std;
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-
-    int n;
-    cin >> n;
-    vector<int> v(n); //원본 벡터
-    // 입력
-    for (int i = 0; i < n; i++)
-    {
-        cin >> v[i];
+int main() {
+    const int CAPACITY = 10;
+    int frequencies[CAPACITY] = {0};
+    ifstream integerFile;
+    integerFile.open("/Users/osuman/Desktop/2024_KEB_bootcamp/KEB/week2(cpp)/day01/integerFile.dat");
+    if (!integerFile) {
+        cout << "숫자 파일을 열 수 없습니다.\n";
+        cout << "프로그램을 중단합니다.";
+        return 0;
     }
-    vector<int> cv(v); // 원본 벡터를 복사하여 중복 된 수를 제거하고 정렬을 시행 할 벡터.
-    sort(cv.begin(), cv.end()); //오름차순 정렬
-    // 중복 제거
-    cv.erase(unique(cv.begin(), cv.end()), cv.end());
-    for (int i = 0; i < n; i++)
-    {
-        // i번째 요소값의 위치 it
-        auto it = lower_bound(cv.begin(), cv.end(), v[i]);
-        // it에서 cv벡터의 시작 주소값을 빼준 값이 답
-        cout << it - cv.begin() << ' ';
+    int data;
+    int size = 0;
+    while (integerFile >> data) {
+        if (data >= 0 && data <= 9) {
+            size++;
+            frequencies[data]++;
+        }
     }
+    integerFile.close();
+    cout << "파일 안에 " << size << "개의 유효한 데이터가 있습니다." << endl;
 
+    for (int i = 0; i < 10; i++) {
+        cout << setw(3) << i << " ";
+        for (int j = 1; j <= frequencies[i]; j++) {
+            cout << '*';
+        }
+        cout << " " << frequencies[i] << endl;
+    }
     return 0;
 }
