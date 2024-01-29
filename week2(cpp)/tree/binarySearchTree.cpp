@@ -60,7 +60,7 @@ void binarySearchTree::insert(int elem) {
             }
         }
         //인풋값이 curNode의 값보다 크다면
-        while (curNode->data < elem) {
+        while (curNode->data <= elem) {
             if (curNode->rightChild == nullptr) {
                 addNode->data = elem;
                 addNode->parent = curNode;
@@ -239,4 +239,39 @@ void binarySearchTree::print(Node* node) {
 
 Node* binarySearchTree::getRoot() {
     return root;
+}
+
+//ex)
+int main() {
+	binarySearchTree* bst=new binarySearchTree();
+	bst->insert(5);
+	bst->insert(2);
+	bst->insert(3);
+	bst->insert(4);
+	bst->insert(1);
+	bst->insert(6);
+	bst->insert(7);
+	
+    //출력
+	bst->print(bst->getRoot());
+	std::cout << '\n';
+	//3값 지우기
+	bst->erase(3);
+	bst->print(bst->getRoot());
+
+	std::cout << '\n';
+    //3값 다시 추가
+	bst->insert(3);
+	bst->print(bst->getRoot());
+	std::cout << '\n';
+    //3값 하나 더 추가
+	bst->insert(3);
+	bst->print(bst->getRoot());
+	std::cout << '\n';
+	//3노드를 매개변수로 줘서 3값 지우기
+	bst->erase(bst->find(3));
+	bst->print(bst->getRoot());
+	std::cout << '\n';
+	//3노드 찾아서 데이터값 출력
+	std::cout<<bst->find(3)->data;
 }
