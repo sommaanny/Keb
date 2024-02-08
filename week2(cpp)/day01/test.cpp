@@ -7,7 +7,7 @@ int main() {
     const int CAPACITY = 10;
     int frequencies[CAPACITY] = {0};
     ifstream integerFile;
-    integerFile.open("/Users/osuman/Desktop/2024_KEB_bootcamp/KEB/week2(cpp)/day01/integerFile.dat");
+    integerFile.open("integerFile.dat");
     if (!integerFile) {
         cout << "숫자 파일을 열 수 없습니다.\n";
         cout << "프로그램을 중단합니다.";
