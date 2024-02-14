@@ -1,12 +1,20 @@
-def fact(n):
-    base = 1
-    for i in range(n):
-        base = base * n
-        n -= 1
-    return base
+# import random
+import copy
 
-def comb(n, r):
-    result = fact(n) // (fact(n-r) * fact(r))
-    return result
+# answer = random.randint(1, 100)
 
-print(comb(4,2))
+# for i in range(7):
+#     n = int(input())
+#     if answer == n:
+#         print("Correct!")
+#         print("You got right answer at", i,"chances")
+#         break
+#     elif n > answer:
+#         print("answer is smaller")
+#     elif n < answer:
+#         print("answer is larger")
+# else:
+#     print("Your Lose..")
+#     print("Answer is", answer)
+
+
